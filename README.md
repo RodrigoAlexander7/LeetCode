@@ -6,7 +6,7 @@
 ![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?logo=leetcode&logoColor=black)
 
 
-Solutions to NeetCode's 150 Problem Roadmap implemented in Python and C++. Contains efficient solutions with detailed explanations.
+Solutions to NeetCode's 150 Problem Roadmap implemented in Python and C++. Contains efficient solutions with detailed explanations in comments.
 
 ## 🔧 Languages & Tools
 
