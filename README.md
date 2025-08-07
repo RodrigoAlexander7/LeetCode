@@ -14,10 +14,6 @@ Solutions to NeetCode's 150 Problem Roadmap implemented in Python and C++. Conta
 ![Python](https://skillicons.dev/icons?i=py)
 ![C++](https://skillicons.dev/icons?i=cpp)
 
-### Development Tools
-![Git](https://skillicons.dev/icons?i=git)
-![VSCode](https://skillicons.dev/icons?i=vscode)
-![Markdown](https://skillicons.dev/icons?i=md)
 
 ## 📚 Problem List
 
