@@ -1,3 +1,5 @@
+// 238. Product of Array Except Self
+
 #include <vector>
 #include <iostream>
 #include <set>
@@ -18,15 +20,16 @@ class Solution {
                 aux_prefix *= nums[i];
             }
             // calculate the list of sufix
-            vector<int> sufix;
+            
+            vector<int> sufix(len,0);   // fixed size and initialize in 0
             int aux_sufix = 1;
-            for(int i = len - 1; i > 0 ; i--){
-                sufix.push_back(aux_sufix);
+            for(int i = len - 1; i >= 0 ; i--){ // until 0 cause we neet to iterate over nums[0] lol
+                sufix[i] = aux_sufix;
                 aux_sufix *= nums[i];
             }
 
             for(int i = 0; i < len; i++){
-                res.push_back(prefix[i] * prefix[i]);
+                res.push_back(prefix[i] * sufix[i]);
             }
             return res;
         }
