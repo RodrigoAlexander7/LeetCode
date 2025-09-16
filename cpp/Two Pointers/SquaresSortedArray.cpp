@@ -33,7 +33,7 @@ public:
             end--;
          }
       }
-      reverse(res.begin(),res.end());     
+      reverse(res.begin(),res.end());
       return res;
 
       // reverse the array
