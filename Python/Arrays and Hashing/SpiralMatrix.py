@@ -1,34 +1,33 @@
-# # 54. Spiral Matrix
+# 54. Spiral Matrix
 
-# from typing import List
+from typing import List
 
-# class Solution:
-#     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-#         res = []
-#         left = up = False
-#         i = j = 0
-#         r = len(matrix)
-#         c = len(matrix[0])
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        res = []
+        top = left = 0
+        right = len(matrix[0])
+        down =  len(matrix) 
 
-#         while r > 0 and c > 0:
-#             while j > 0 and j < c:
-#                 res.append(matrix[i][j])
-#                 if not left :
-#                     j+=1
-#                 else:
-#                     j-=1
-#             r-=1
-#             j+=1
-#             left = not left
 
-#             while i > 0 and i < r:
-#                 res.append(matrix[i][j])
-#                 if not up:
-#                     i+=1
-#                 else:
-#                     i-=1
-#             c-=1
-#             i+=1
-#             up = not up
-#         return res
-        
+        while(down > top  and right > left):
+            for c in range(left,right):
+                res.append(matrix[top][c])
+            top += 1
+
+            for r in range(top, down):
+                res.append(matrix[r][right - 1])    # right is unbounded
+            right -=1
+
+            if not (down > top and right > left):
+                break
+
+            for c in range(right-1, left - 1, -1): # right - 1 -> right is unbounded by initialization  |  left - 1 -> to include the las index 
+                res.append(matrix[down - 1][c])     # down is unbounded
+            down -= 1
+
+            for r in range(down - 1, top - 1, -1):
+                res.append(matrix[r][left])
+            left+=1
+
+        return res
