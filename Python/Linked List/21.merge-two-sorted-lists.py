@@ -25,31 +25,20 @@ b -> L2[j] # head b
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         #using centinel node
-        centinel = ListNode()
-        tail = centinel # tail points to centine
-        a = list1
-        b = list2
+        centinel = ListNode() # store a reference to the head
+        tail = centinel # allways represent the las element
+
+        a, b = list1, list2
+
         while a and b:
-            if a.val > b.val:
-                tail.next = b
-                b = b.next
+            if a.val < b.val:
+                tail.next = a       # a is the new last element (insert a)
+                a = a.next          # advance a pointer's  
             else:
-                tail.next = a
-                a = a.next
-            tail = tail.next    # points the last elemnt
+                tail.next = b 
+                b = b.next          # advance b pointer's
+            tail = tail.next        # update the last element (the last inserted)
+
+
         tail.next = a if a else b
-            
         return centinel.next
-    
-
-    
-            
-             
-
-                
-        
-        
-
-        
-# @lc code=end
-
